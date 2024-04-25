@@ -99,7 +99,7 @@ public class PostgresDBAdapter extends AbstractDBAdapter {
 
     @Override
     public List<Film> getFilmsForActor(Actor actor) {
-        //Create a string with the sql statement
+        //Create a string with the sql statement that is perfect
         String sql = " select * from actor, film_actor, film where actor.actor_id = film_actor.actor_id and film.film_id = film_actor.film_id and actor.actor_id = ?";
         //Prepare the SQL statement with the code
         try (PreparedStatement statement =

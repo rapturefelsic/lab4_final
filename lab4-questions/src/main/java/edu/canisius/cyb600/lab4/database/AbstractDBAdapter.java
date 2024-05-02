@@ -1,6 +1,11 @@
 package edu.canisius.cyb600.lab4.database;
 
+import edu.canisius.cyb600.lab4.dataobjects.Actor;
+import edu.canisius.cyb600.lab4.dataobjects.Category;
+import edu.canisius.cyb600.lab4.dataobjects.Film;
+
 import java.sql.Connection;
+import java.util.List;
 
 /**
  * Abstract DB Adapter
@@ -12,8 +17,15 @@ public abstract class AbstractDBAdapter {
         this.conn = conn;
     }
 
+    public abstract Actor addActor(Actor actor);
+    public abstract List<Actor> insertAllActorsWithAnOddNumberLastName(List<Actor> actors);
     //SELECTS
+    public abstract List<Film> getFilmsInCategory(Category category);
 
+    public abstract List<String> getAllDistinctCategoryNames();
+    public abstract List<Film> getAllFilmsWithALengthLongerThanX(int length);
+
+    public abstract List<Actor> getActorsFirstNameStartingWithX(char firstLetter);
     //INSERTS
 
     //JOIN
